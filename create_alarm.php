@@ -1,7 +1,7 @@
 <?php
 	require 'init.php';
 
-	$u_AlarmTime=$_GET['alarm_time'];
+	$u_AlarmTime=$_POST['alarm_time'];
 
 	$sql="insert into tbl_alarm(alarm_time) values('$u_AlarmTime')";
 

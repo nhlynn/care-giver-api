@@ -1,11 +1,11 @@
 <?php
 	require 'init.php';
 
-	$u_UserName=$_GET['username'];
-	$u_Contact=$_GET['contact'];
-	$u_Password=$_GET['password'];
+	$u_UserName=$_POST['username'];
+	$u_Contact=$_POST['contact'];
+	$u_Password=$_POST['password'];
 
-	$sql="select * from tbl_user where username='$u_UserName'";
+	$sql="SELECT * FROM tbl_user WHERE username='$u_UserName'";
 
 	$result=mysqli_query($conn,$sql);
 
@@ -14,7 +14,7 @@
 		$message="Already exist.";
 
 	}else{
-		$sql="insert into user_info(username,contact,password) values('$u_UserName','$u_Contact','$u_Password')";
+		$sql="insert into tbl_user(username, contact, password) values('$u_UserName','$u_Contact','$u_Password')";
 
 		if (mysqli_query($conn,$sql)) {
 			$status=1;
